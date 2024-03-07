@@ -7,7 +7,7 @@ export class App extends PureComponent{
 
   state = {
     query: '',
-    gifs: null,
+    gifs: [],
     
   }
 

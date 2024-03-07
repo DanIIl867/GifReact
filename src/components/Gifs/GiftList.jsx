@@ -28,15 +28,15 @@ export class GiftList extends PureComponent{
 
     render(){
 
-        const { gif, error, status} = this.state 
-        const {gifs} = this.props
+        const {error, status} = this.state 
+        // const {gifs} = this.props
 
             if (status === 'idle') {return <p>Про що Gif?</p>}
             if (status === 'pending') {return <div>Loading...</div>}
             if (status === 'rejected') {return <div>{error.message}</div>}
             if (status === 'resolved') {
                 return <ul>
-                    {!gifs && gifs.map(gif => {
+                    {this.props.gifs.map(gif => {
                         return <li key={gif.id}>
                             <img src={gif.images.original.url} alt="" />
                         </li> 
